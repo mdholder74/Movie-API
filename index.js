@@ -45,7 +45,7 @@ function renderMoviesList(movies) {
         let movieListItem = document.createElement('div'); // Create a new div for each movie
         movieListItem.dataset.id = movies[i].imdbID; // Store the IMDb ID in a data attribute
         movieListItem.classList.add('search-list-item'); // Add a the class name search-list-item to each movie item
-        let moviePoster = (movies[i].Poster != "N/A") ? movies[i].Poster : "image_not_found.png"; // Check if the movie has a poster; if not, use the not found placeholder image
+        let moviePoster = (movies[i].Poster != "N/A") ? movies[i].Poster : "./images/image_not_found.png"; // Check if the movie has a poster; if not, use the not found placeholder image
 
         // Set the movielistitem innerHTML to the movie poster and movie title and year. This will generate the movie poster, title, and year in the search list
         movieListItem.innerHTML = `
@@ -81,7 +81,7 @@ function fetchMovieDetails() {
 function renderMovieDetails(details) {
     movieResultInfo.innerHTML = `
     <div class="movie-poster">
-        <img src="${(details.Poster != "N/A") ? details.Poster : "image_not_found.png"}">
+        <img src="${(details.Poster != "N/A") ? details.Poster : "./images/image_not_found.png"}">
     </div>
     <div class="movie-info">
         <h3 class="movie-title">${details.Title}</h3>
